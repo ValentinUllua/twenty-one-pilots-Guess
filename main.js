@@ -3,8 +3,8 @@ const clientId = 'e232229809ea492e973c4e7d1a3233d1';
 const clientSecret = '9c6de402248a44cba91bcda69131b720';
 
 // Una canción de ejemplo (ID de Spotify)
-const trackId = '6DzXaIgVIH7oLA1pkUtFaG'; // Mr. Brightside – The Killers
-const correctAnswer = 'The contract';
+const trackId = '3n3Ppam7vgaVa1iaRUc9Lp'; // Mr. Brightside – The Killers
+const correctAnswer = 'Mr. Brightside';
 
 // Obtener token de acceso desde Spotify
 async function getToken() {

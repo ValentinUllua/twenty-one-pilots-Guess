@@ -30,8 +30,13 @@ async function playPreview() {
   });
 
   const data = await response.json();
-  const audio = new Audio(data.preview_url);
-  audio.play();
+
+    if (data.preview_url) {
+        const audio = new Audio(data.preview_url);
+        audio.play();
+    } else {
+        alert('Esta canción no tiene preview disponible.');
+    }
 }
 
 // Eventos

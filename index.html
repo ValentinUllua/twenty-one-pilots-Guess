@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Adivina la Canción</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; }
+    button, input { padding: 10px; margin-top: 20px; font-size: 16px; }
+  </style>
 </head>
 <body>
-    
+  <h1>🎵 Adivina la canción</h1>
+  <button id="play-button">▶️ Escuchar Fragmento</button><br>
+  <input type="text" id="guess" placeholder="Nombre de la canción...">
+  <button id="submit-button">Enviar</button>
+  <p id="result"></p>
+
+  <script src="main.js"></script>
 </body>
 </html>

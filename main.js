@@ -3,8 +3,8 @@ const clientId = 'e232229809ea492e973c4e7d1a3233d1';
 const clientSecret = '9c6de402248a44cba91bcda69131b720';
 
 // Una canción de ejemplo (ID de Spotify)
-const trackId = '3n3Ppam7vgaVa1iaRUc9Lp'; // Mr. Brightside – The Killers
-const correctAnswer = 'Mr. Brightside';
+const trackId = '3CRDbSIZ4r5MsZ0YwxuEkn'; // Mr. Brightside – The Killers
+const correctAnswer = 'stressed out';
 
 // Obtener token de acceso desde Spotify
 async function getToken() {
@@ -29,15 +29,28 @@ async function playPreview() {
     }
   });
 
-  const data = await response.json();
+  if (!response.ok) {
+    console.error("Error al obtener el track:", await response.text());
+    return;
+  }
 
-    if (data.preview_url) {
-        const audio = new Audio(data.preview_url);
-        audio.play();
-    } else {
-        alert('Esta canción no tiene preview disponible.');
-    }
+  const data = await response.json();
+  console.log("Track info:", data);
+
+  if (!data.preview_url) {
+    alert("❌ Esta canción no tiene preview disponible.");
+    return;
+  }
+
+  const audio = new Audio(data.preview_url);
+  audio.play().then(() => {
+    console.log("Reproduciendo...");
+  }).catch(err => {
+    console.error("Error al reproducir el audio:", err);
+    alert("⚠️ Tu navegador bloqueó el audio. Intentá nuevamente.");
+  });
 }
+
 
 // Eventos
 document.getElementById('play-button').addEventListener('click', () => {

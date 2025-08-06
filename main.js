@@ -3,7 +3,7 @@ const clientId = 'e232229809ea492e973c4e7d1a3233d1';
 const clientSecret = '9c6de402248a44cba91bcda69131b720';
 
 // Una canción de ejemplo (ID de Spotify)
-const trackId = '3CRDbSIZ4r5MsZ0YwxuEkn'; // Mr. Brightside – The Killers
+const trackId = '5ChkMS8OtdzJeqyybCc9R5'; // Mr. Brightside – The Killers
 const correctAnswer = 'stressed out';
 
 // Obtener token de acceso desde Spotify
